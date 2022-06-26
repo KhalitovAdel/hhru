@@ -10,7 +10,7 @@ services:
             dockerfile: Dockerfile
         networks:
             - browser
-        env_file: .env
+        env_file: ${ENV_FILE:-.env}
         environment:
             BROWSER_URL: http://browser:4444
         depends_on:
