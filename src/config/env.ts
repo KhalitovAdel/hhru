@@ -10,11 +10,6 @@ export const env = Object.freeze({
         email: EnvException.required('HH_EMAIL'),
         password: EnvException.required('HH_PASSWORD'),
     }),
-    environment: Object.freeze({
-        isTest: process.env.NODE_ENV === 'TEST',
-        isProduction: process.env.NODE_ENV === 'PRODUCTION',
-        isDevelopment: process.env.NODE_ENV === 'DEVELOPMENT',
-    }),
     browser: Object.freeze({
         url: process.env.BROWSER_URL,
     }),
