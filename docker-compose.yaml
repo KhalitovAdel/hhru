@@ -1,0 +1,23 @@
+version: '3.4'
+
+networks:
+    browser:
+
+services:
+    application:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        networks:
+            - browser
+        env_file: .env
+        environment:
+            BROWSER_URL: http://browser:4444
+        depends_on:
+            - browser
+
+    browser:
+        image: selenium/standalone-firefox:4.3.0-20220624
+        restart: always
+        networks:
+            - browser

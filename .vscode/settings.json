@@ -1,0 +1,31 @@
+{
+    "debug.javascript.autoAttachFilter": "onlyWithFlag",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "editor.suggest.showWords": false,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "eslint.alwaysShowStatus": true,
+    "eslint.debug": true,
+    "eslint.enable": true,
+    "eslint.format.enable": true,
+    "eslint.lintTask.enable": true,
+    "eslint.lintTask.options": "${workspaceFolder}/.eslintrc.json",
+    "eslint.run": "onType",
+    "files.autoSave": "onFocusChange",
+    "javascript.format.enable": false,
+    "liveshare.accessibility.accessibilityFeaturesEnabled": true,
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.allowGuestTaskControl": true,
+    "liveshare.alwaysFollowHost": true,
+    "liveshare.connectionMode": "relay",
+    "liveshare.diagnosticLogging": true,
+    "liveshare.diagnosticMode": true,
+    "liveshare.guestApprovalRequired": true,
+    "liveshare.notebooks.allowGuestExecuteCells": true,
+    "remote.SSH.remoteServerListenOnSocket": true,
+    "typescript.format.enable": false,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.updateImportsOnFileMove.enabled": "always"
+}
