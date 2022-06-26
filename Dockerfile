@@ -6,7 +6,6 @@ RUN npm ci
 
 FROM install_dev_deps as build_src
 
-RUN pwd
 COPY src/ ./src
 COPY package.json ./package.json
 COPY tsconfig* ./
