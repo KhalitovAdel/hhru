@@ -1,13 +1,11 @@
 export class IncludeChecker {
-    private readonly substrings: string[];
+    private readonly substringsRegexp: RegExp[];
 
     constructor(substrings: string[]) {
-        this.substrings = substrings.map((s) => s.toLowerCase());
+        this.substringsRegexp = substrings.map((s) => new RegExp(`\\b${s}\\b`, 'gi'));
     }
 
     public isInclude(str: string): boolean {
-        const lowerCaseStr = str.toLowerCase();
-
-        return this.substrings.some((s) => lowerCaseStr.includes(s));
+        return this.substringsRegexp.some((r) => r.test(str));
     }
 }
