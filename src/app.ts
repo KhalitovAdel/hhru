@@ -45,8 +45,14 @@ export class App {
             return;
         }
         this.logger.info('Task starting');
-        await this.process();
-        this.logger.info('Task finished');
+        try {
+            await this.process();
+            this.logger.info('Task finished');
+        } catch (e) {
+            this.logger.error('Handled global error from scheduled task', {
+                errorMessage: e instanceof Error ? e.message : undefined,
+            });
+        }
 
         setTimeout(async () => this.processAndSchedule(), TimeUtil.ONE_HOUR_IN_MILLISECOND);
     }
