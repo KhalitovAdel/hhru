@@ -18,6 +18,6 @@ COPY --from=build_src /development/dist ./dist
 COPY package* ./
 RUN npm ci --only=prod
 
-VOLUME logs
+VOLUME /app/logs
 
 ENTRYPOINT npm run start:prod
