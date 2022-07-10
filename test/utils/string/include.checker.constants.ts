@@ -44,6 +44,8 @@ export const blackListMap = new Map([
         ['PHP'],
         ['PHP Developer', 'PHP Developer, Санкт-Петербург', 'RockStar PHP', 'RockStar PHP инженер', 'Php senior'],
     ],
+    [['C#'], ['C# Lead / Senior разработчик (.net, back-end)']],
+    [['C++'], ['Senior C++ Developer (графика OpenGL/WebGL)']],
 ]);
 
 export const nodejs = [

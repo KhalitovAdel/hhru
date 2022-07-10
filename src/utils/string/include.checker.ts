@@ -2,7 +2,11 @@ export class IncludeChecker {
     private readonly substringsRegexp: RegExp[];
 
     constructor(substrings: string[]) {
-        this.substringsRegexp = substrings.map((s) => new RegExp(`\\b${IncludeChecker.sanitizeWord(s)}\\b`, 'i'));
+        this.substringsRegexp = substrings.map((s) => {
+            const regexp = new RegExp(`\\b${IncludeChecker.sanitizeWord(s)}\\b`, 'i');
+            const plainRegexp = new RegExp(IncludeChecker.sanitizeWord(s), 'i');
+            return regexp.test(s) ? regexp : plainRegexp;
+        });
     }
 
     public isInclude(str: string): boolean {
@@ -10,6 +14,6 @@ export class IncludeChecker {
     }
 
     private static sanitizeWord(str: string): string {
-        return str.replace(/\+/g, '\\+');
+        return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     }
 }
