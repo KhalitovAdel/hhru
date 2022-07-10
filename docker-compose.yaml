@@ -15,9 +15,15 @@ services:
             BROWSER_URL: http://browser:4444
         depends_on:
             - browser
+        logging:
+            options:
+                max-size: 50m
 
     browser:
         image: selenium/standalone-firefox:4.3.0-20220624
         restart: always
         networks:
             - browser
+        logging:
+            options:
+                max-size: 50m
