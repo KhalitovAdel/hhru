@@ -2,7 +2,7 @@ export class IncludeChecker {
     private readonly substringsRegexp: RegExp[];
 
     constructor(substrings: string[]) {
-        this.substringsRegexp = substrings.map((s) => new RegExp(`\\b${IncludeChecker.sanitizeWord(s)}\\b`, 'gi'));
+        this.substringsRegexp = substrings.map((s) => new RegExp(`\\b${IncludeChecker.sanitizeWord(s)}\\b`, 'i'));
     }
 
     public isInclude(str: string): boolean {

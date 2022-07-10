@@ -12,6 +12,11 @@ describe.each([...constants.blackListMap])('IncludeChecker %p', (blackWords, tes
         expect(checker.isInclude(word)).toBeTruthy();
     });
 
+    it.each(testStrings)('in %p works one more time', (word) => {
+        expect(checker.isInclude(word)).toBeTruthy();
+        expect(checker.isInclude(word)).toBeTruthy();
+    });
+
     it.each([
         ...constants.nodejs,
         ...constants.javascript,
